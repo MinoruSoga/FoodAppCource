@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_cource/commons.dart';
+import 'package:food_app_cource/widgets/categories.dart';
 import 'package:food_app_cource/widgets/custom_text.dart';
 
 class Home extends StatefulWidget {
@@ -80,49 +81,7 @@ class _HomeState extends State<Home> {
             SizedBox(
               height: 5,
             ),
-            Container(
-              height: 120,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 5,
-                itemBuilder: (_, index) {
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            color: white,
-                            boxShadow: [
-                              BoxShadow(
-                                color: red[50]!,
-                                offset: Offset(4, 6),
-                                blurRadius: 20,
-                              ),
-                            ],
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.all(4),
-                            child: Image.asset(
-                              "images/salad.png",
-                              width: 50,
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        CustomText(
-                          text: "Salad",
-                          size: 14,
-                          color: black,
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
-            ),
+            Categories()
           ],
         ),
       ),
